@@ -12,3 +12,12 @@ before_script:
 script:
   - ng build --prod
 
+deploy:
+  - provider: heroku
+    skip_cleanup: true
+    api_key:
+      secure: GBn+n2f89uddXPcgVYS/A3RGkdhfd5Ms7A/yAXGTAwhQW/qX66Vv1/reOQdKwbN6+Hbdt0mL9FDtdMGIQ7zrHwj6H+1n/LZGloJ8MB2zSj75mlVV32trqOKEFH0sMe7wKV/yKe9FWO02wH8abULriSo4H9c34qGLg8SmUxmZNFc=
+    app: angular-tank
+    on:
+      branch: develop
+
