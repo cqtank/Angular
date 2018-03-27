@@ -1,0 +1,10 @@
+
+<!--<h1>{{title}}</h1>-->
+<nav *ngIf="isLogged()">
+  <a routerLink="/dashboard">Dashboard</a>
+  <a routerLink="/heroes">Heroes</a>
+  <a routerLink="/login" ng-click="logout()">Logout</a>
+</nav>
+
+<router-outlet></router-outlet>
+<app-messages></app-messages>
