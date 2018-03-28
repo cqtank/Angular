@@ -6,7 +6,7 @@ import { HeroesComponent }        from './heroes/heroes.component';
 import { HeroDetailComponent }    from './hero-detail/hero-detail.component';
 
 import { LoginComponent }         from './login/login.component';
-import { AuthGuard }              from './_guards/index';
+import { AuthGuard }              from './guards/index';
 
 const routes: Routes = [
   { path: '',           redirectTo: '/dashboard', pathMatch: 'full' },

@@ -2,30 +2,32 @@ import { NgModule }       from '@angular/core';
 import { BrowserModule }  from '@angular/platform-browser';
 import { FormsModule }    from '@angular/forms';
 import { HttpClientModule, HTTP_INTERCEPTORS }    from '@angular/common/http';
+import { MockBackend, MockConnection } from '@angular/http/testing';
+import { BaseRequestOptions } from '@angular/http';
 
 import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
-import { InMemoryDataService }  from './in-memory-data.service';
 
+//Routing
 import { AppRoutingModule }     from './app-routing.module';
 
+// Component
 import { AppComponent }         from './app.component';
 import { DashboardComponent }   from './dashboard/dashboard.component';
 import { HeroDetailComponent }  from './hero-detail/hero-detail.component';
 import { HeroesComponent }      from './heroes/heroes.component';
 import { HeroSearchComponent }  from './hero-search/hero-search.component';
-import { HeroService }          from './hero.service';
-import { MessageService }       from './message.service';
 import { MessagesComponent }    from './messages/messages.component';
+import { LoginComponent }       from './login/login.component';
 
+// Service
+import { HeroService, MessageService, AuthenticationService, UserService  } from './services/index';
 
-import { LoginComponent } from './login/login.component';
+// fake data
+import { InMemoryDataService, fakeBackendProvider } from './helpers/index';
 
-import { fakeBackendProvider } from './_helpers/index';
-import { MockBackend, MockConnection } from '@angular/http/testing';
-import { BaseRequestOptions } from '@angular/http';
+// guard
+import { AuthGuard } from './guards/index';
 
-import { AuthGuard } from './_guards/index';
-import { AuthenticationService, UserService } from './_services/index';
 
 @NgModule({
   imports: [
@@ -50,11 +52,11 @@ import { AuthenticationService, UserService } from './_services/index';
     HeroSearchComponent,
     LoginComponent
   ],
-  providers: [  HeroService, MessageService,
+  providers: [  HeroService,
+                MessageService,
                 AuthGuard,
                 AuthenticationService,
                 UserService,
-
                 fakeBackendProvider,
                 MockBackend,
                 BaseRequestOptions
