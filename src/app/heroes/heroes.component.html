@@ -1,21 +1,30 @@
 <h2>My Heroes</h2>
 
-<div>
-  <label>Hero name:
-    <input #heroName />
-  </label>
-  <!-- (click) passes input value to add() and then clears the input -->
-  <button (click)="add(heroName.value); heroName.value=''">
-    add
-  </button>
-</div>
+<form class="form-inline">
+  <div class="form-group">
+    <label>Hero name:</label>
+    <input class="form-control" #heroName />
+    <!-- (click) passes input value to add() and then clears the input -->
+    <a class="btn btn-success" (click)="add(heroName.value); heroName.value=''">add</a>
+  </div>
+</form>
 
-<ul class="heroes">
-  <li *ngFor="let hero of heroes">
-    <a routerLink="/detail/{{hero.id}}">
-      <span class="badge">{{hero.id}}</span> {{hero.name}}
-    </a>
-    <button class="delete" title="delete hero"
-    (click)="delete(hero)">x</button>
-  </li>
-</ul>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <td>#</td>
+      <td>Name</td>
+      <td>Action</td>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let hero of heroes">
+      <td>{{hero.id}}</td>
+      <td>{{hero.name}}</td>
+      <td>
+          <a class="btn btn-info"   title="view hero" routerLink="/detail/{{hero.id}}">Edit</a>
+          <a class="btn btn-danger" title="delete hero" (click)="delete(hero)">Delete</a>
+      </td>
+    </tr>
+  </tbody>
+</table>

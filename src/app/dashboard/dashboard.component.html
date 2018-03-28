@@ -1,17 +1,18 @@
-<div class="alert alert-primary" role="alert">
+<div *ngFor = "let user of users" class="alert alert-info" role="alert">
   Users from secure api end point:
-  <ul class="nav nav-pills">
-    <li class="nav-item" *ngFor = "let user of users">{{user.firstName}} {{user.lastName}}</li>
-  </ul>
+  {{user.firstName}} {{user.lastName}}
 </div>
 <h3>Top Heroes</h3>
-<div class="grid grid-pad">
-  <a *ngFor="let hero of heroes" class="col-1-4"
-      routerLink="/detail/{{hero.id}}">
-    <div class="module hero">
-      <h4>{{hero.name}}</h4>
+<div class="row">
+  <div *ngFor="let hero of heroes" class="col-md-3 col-xs-6">
+    <div  class="thumbnail">
+      <img data-src="holder.js/100%x200">
+      <div class="caption">
+        <h4>{{hero.name}}</h4>
+        <p><a class="btn btn-primary" routerLink="/detail/{{hero.id}}">View</a></p>
+      </div>
     </div>
-  </a>
+  </div>
 </div>
 
 <app-hero-search></app-hero-search>
