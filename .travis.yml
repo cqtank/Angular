@@ -1,19 +1,18 @@
 language: node_js
 node_js:
-- '7.8'
+  - "7"
 branches:
   only:
   - master
-before_script:
-- npm install -g @angular/cli
+install:
+  - npm install -g @angular/cli
+  - npm install
 script:
-- npm start
+  - npm start
 deploy:
-  matrix:
-  - provider: heroku
-    skip_cleanup: true
-    api_key:
-      secure: ZwS6BoAA24PZ8Gh7P7DqoOjJzWxlyIy4wdoS0BeTJkSKuQYxMYGTpWiYtZ42U2Wo7ErhsHrH31OZmpltJfFoQTWkvR+6s1QrDMepELVR+ksknZK0eV3cCQ5ShzESXv0hDrpYJRf5+grDv+Cmzna7+qlgi60qqyzD+imKbTGzSzO4drtQ2Y/JESIGZCfIYH6BKUdEQ6R2lx44zYCMA93idtdjTWZPQ+ylCUPlog/Of0tfSFegkZrVZiNV3nwT9ARyfKAcipr3eYdhbWkhPPvaokBXucdMLdCmz+krC5dfwTZ9t+t1fMUhxAbs94EoyxR13dFOBGjhLK6HRRwRd9iTDFlNjFNKio8Rl9V6MfX9+bBoGH8m9/pwHvdz7seAwPXZK9hwX/ayV2nkoY5FoUlabDaDma9pt7+LBz/Xc2ZFyVk9tlNz8yeHww83HxMkU1yvqocWkTRI6M57NgFFMopkOSCOCgSH6E82JoWru82ztY+cTwbiCuR4TFFQHpPT0uccT5nMfrQjXkuu+RJNKZWrRlB26ml8uoesiXkvre3zg2hpcLcOeH8b5VY1UhfZQDk6P1xfP3us0gLd2EwIkJEYzJsjm9sogf575rDrX3uL3xFf62Ce+zUDrOMRQGOMDgOvkzg5TFDZ5RdtcwtGb3HDXzQJOxowcmPUetr1AI2CReU=
-    app: angular-tank
+  provider: heroku
+  api_key:
+    secure: ZwS6BoAA24PZ8Gh7P7DqoOjJzWxlyIy4wdoS0BeTJkSKuQYxMYGTpWiYtZ42U2Wo7ErhsHrH31OZmpltJfFoQTWkvR+6s1QrDMepELVR+ksknZK0eV3cCQ5ShzESXv0hDrpYJRf5+grDv+Cmzna7+qlgi60qqyzD+imKbTGzSzO4drtQ2Y/JESIGZCfIYH6BKUdEQ6R2lx44zYCMA93idtdjTWZPQ+ylCUPlog/Of0tfSFegkZrVZiNV3nwT9ARyfKAcipr3eYdhbWkhPPvaokBXucdMLdCmz+krC5dfwTZ9t+t1fMUhxAbs94EoyxR13dFOBGjhLK6HRRwRd9iTDFlNjFNKio8Rl9V6MfX9+bBoGH8m9/pwHvdz7seAwPXZK9hwX/ayV2nkoY5FoUlabDaDma9pt7+LBz/Xc2ZFyVk9tlNz8yeHww83HxMkU1yvqocWkTRI6M57NgFFMopkOSCOCgSH6E82JoWru82ztY+cTwbiCuR4TFFQHpPT0uccT5nMfrQjXkuu+RJNKZWrRlB26ml8uoesiXkvre3zg2hpcLcOeH8b5VY1UhfZQDk6P1xfP3us0gLd2EwIkJEYzJsjm9sogf575rDrX3uL3xFf62Ce+zUDrOMRQGOMDgOvkzg5TFDZ5RdtcwtGb3HDXzQJOxowcmPUetr1AI2CReU=
+  app: angular-tank
     on:
       branch: master
