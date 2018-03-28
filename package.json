@@ -1,5 +1,5 @@
 {
-  "name": "angular-io-example",
+  "name": "demo-deploy",
   "version": "1.0.0",
   "license": "MIT",
   "private": true,
@@ -7,7 +7,7 @@
   "scripts": {
     "ng": "ng",
     "build": "ng build --prod",
-    "start": "node serve.js",
+    "start": "node server.js",
     "test": "ng test",
     "lint": "tslint ./src/**/*.ts -t verbose",
     "e2e": "ng e2e"
@@ -58,6 +58,6 @@
   "engines": {
     "node": "8.4.0",
     "npm":  "5.3.0"
-  }
+  },
   "repository": {}
 }
