@@ -17,7 +17,7 @@ import { HeroService }          from './hero.service';
 import { MessageService }       from './message.service';
 import { MessagesComponent }    from './messages/messages.component';
 
-import { HomeComponent } from './home/home.component';
+
 import { LoginComponent } from './login/login.component';
 
 import { fakeBackendProvider } from './_helpers/index';
@@ -48,7 +48,6 @@ import { AuthenticationService, UserService } from './_services/index';
     HeroDetailComponent,
     MessagesComponent,
     HeroSearchComponent,
-    HomeComponent,
     LoginComponent
   ],
   providers: [  HeroService, MessageService,
