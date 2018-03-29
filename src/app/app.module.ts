@@ -10,6 +10,9 @@ import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 //Routing
 import { AppRoutingModule }     from './app-routing.module';
 
+// Module
+import { DataTablesModule }     from 'angular-datatables';
+
 // Component
 import { AppComponent }         from './app.component';
 import { DashboardComponent }   from './dashboard/dashboard.component';
@@ -35,6 +38,8 @@ import { AuthGuard } from './guards/index';
     FormsModule,
     AppRoutingModule,
     HttpClientModule,
+
+    DataTablesModule,
 
     // The HttpClientInMemoryWebApiModule module intercepts HTTP requests
     // and returns simulated server responses.

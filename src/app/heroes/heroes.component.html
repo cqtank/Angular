@@ -1,30 +1,60 @@
 <h4>My Heroes</h4>
 
-<form class="form-inline">
-  <div class="form-group">
-    <label>Hero name:</label>
-    <input class="form-control" #heroName />
-    <!-- (click) passes input value to add() and then clears the input -->
-    <a class="btn btn-success" (click)="add(heroName.value); heroName.value=''">add</a>
-  </div>
-</form>
 
-<table class="table table-striped">
-  <thead>
-    <tr>
-      <td>#</td>
-      <td>Name</td>
-      <td>Action</td>
-    </tr>
-  </thead>
-  <tbody>
-    <tr *ngFor="let hero of heroes">
-      <td>{{hero.id}}</td>
-      <td>{{hero.name}}</td>
-      <td>
-          <a class="btn btn-info"   title="view hero" routerLink="/detail/{{hero.id}}">Edit</a>
-          <a class="btn btn-danger" title="delete hero" (click)="delete(hero)">Delete</a>
-      </td>
-    </tr>
-  </tbody>
-</table>
+
+<div class="panel panel-info">
+  <div class="panel-heading">Result
+    <div class="pull-right">
+      <form class="form-inline">
+        <div class="form-group-sm">
+          <label>new Hero name:</label>
+          <input class="form-control"  #heroName />
+          <!-- (click) passes input value to add() and then clears the input -->
+          <a class="btn btn-success btn-xs" (click)="add(heroName.value); heroName.value=''">add</a>
+        </div>
+      </form>
+    </div>
+  </div>
+  <div class="panel-body">
+    <table style="width:100%" datatable [dtOptions]="dtOptions" [dtTrigger]="dtTrigger" class="table table-striped row-border">
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Name</th>
+          <th>Header 1</th>
+          <th>Header 2</th>
+          <th>Header 3</th>
+          <th>Header 4</th>
+          <th>Header 5</th>
+          <th>Header 6</th>
+          <th>Header 7</th>
+          <th>Header 8</th>
+          <th>Header 9</th>
+          <th>Header 10</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let hero of heroes">
+          <td>{{hero.id}}</td>
+          <td>{{hero.name}}</td>
+          <td>an massa. Cum sociis natoque penatibus et mag</td>
+          <td>is, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. Quis</td>
+          <td>feugiat</td>
+          <td>tellus</td>
+          <td>Phasellus</td>
+          <td>viverra</td>
+          <td>metus</td>
+          <td>laoreet</td>
+          <td>metus</td>
+          <td>Quis</td>
+          <td>
+            <a class="btn btn-info"   title="view hero" routerLink="/detail/{{hero.id}}">Edit</a>
+            <a class="btn btn-danger" title="delete hero" (click)="delete(hero)">Delete</a>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
