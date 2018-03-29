@@ -8,10 +8,11 @@ import { AuthenticationService } from './services/index';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent {
+export class AppComponent{
+
   title = 'Tour of Heroes';
 
-  constructor(private router: Router, private authenticationService: AuthenticationService)  { }
+  constructor(private router: Router, private authenticationService: AuthenticationService)  {}
 
   isLogged(){
     if (localStorage.getItem('currentUser')) {
